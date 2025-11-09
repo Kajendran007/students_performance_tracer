@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Performance Visualization</title>
+  <style>
+    body { font-family: Arial; margin: 40px; background-color: #f0f0f0; text-align: center; }
+    h2 { color: #2c3e50; }
+    img { border: 1px solid #ccc; background: white; padding: 10px; margin-top: 20px; }
+    a { display: inline-block; margin-top: 20px; text-decoration: none; color: #007bff; }
+  </style>
+</head>
+<body>
+  <h2>Performance Visualization</h2>
+
+  {% if chart_exists %}
+    <img src="/static/performance.png" alt="Performance Chart" width="500">
+  {% else %}
+    <p>No data available to visualize yet.</p>
+  {% endif %}
+
+  <br><a href="/">⬅ Back</a>
+</body>
+</html>

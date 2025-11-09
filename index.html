@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Performance Tracker</title>
+  <style>
+    body { font-family: Arial; margin: 40px; background-color: #f8f9fa; }
+    h2 { color: #2c3e50; }
+    form { margin-bottom: 20px; }
+    input, button { padding: 6px; margin: 4px; }
+    table { border-collapse: collapse; width: 60%; background: white; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background-color: #3498db; color: white; }
+    a { text-decoration: none; color: #007bff; }
+  </style>
+</head>
+<body>
+  <h2>Student Performance Tracker</h2>
+
+  <form action="/add" method="post">
+    <input type="text" name="name" placeholder="Student Name" required>
+    <input type="text" name="subject" placeholder="Subject" required>
+    <input type="number" name="marks" placeholder="Marks" required>
+    <button type="submit">Add Record</button>
+  </form>
+
+  <h3>Average Marks: {{ avg }}</h3>
+
+  <table>
+    <tr><th>ID</th><th>Name</th><th>Subject</th><th>Marks</th></tr>
+    {% for s in data %}
+      <tr>
+        <td>{{ s.id }}</td>
+        <td>{{ s.name }}</td>
+        <td>{{ s.subject }}</td>
+        <td>{{ s.marks }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+  <br><a href="/visualize">📊 View Chart</a>
+</body>
+</html>
